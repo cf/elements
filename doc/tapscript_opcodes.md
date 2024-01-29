@@ -66,8 +66,8 @@ When defining the opcodes which can fail, we only define the success path, and a
    1. Support for binary operations is already available via `OP_AND`, `OP_OR`, `OP_INVERT` and `OP_XOR`
 
 4. **Conversion opcodes:** Methods for conversion from `CScriptNum` to `8-byte LE`, `4-byte LE`.
-   1. Define `OP_SUCCESS224` as `OP_SCIPTNUMTOLE64`: pop the stack as minimal `CSciptNum`, push 8 byte signed LE corresponding to that number.
-   1. Define `OP_SUCCESS225` as `OP_LE64TOSCIPTNUM`: pop the stack as a 8 byte signed LE. Convert to `CScriptNum` and push it, abort on fail.
+   1. Define `OP_SUCCESS224` as `OP_SCRIPTNUMTOLE64`: pop the stack as minimal `CScriptNum`, push 8 byte signed LE corresponding to that number.
+   1. Define `OP_SUCCESS225` as `OP_LE64TOSCRIPTNUM`: pop the stack as a 8 byte signed LE. Convert to `CScriptNum` and push it, abort on fail.
    1. Define `OP_SUCCESS226` as `OP_LE32TOLE64`: pop the stack as a 4 byte _unsigned_ LE. Push the corresponding 8 byte _signed_ LE number. Cannot fail, useful for operating of version, locktime, sequence, number of inputs, number of outputs, weight etc.
 
 5. **Crypto**: In order to allow more complex operations on elements, we introduce the following new crypto-operators. Each opcode counts as 50 towards the sigops budget.
